@@ -38,9 +38,10 @@ void I2CRead(uint8_t Address, uint8_t Register, uint8_t ByteCount, uint8_t* Data
   uint8_t index=0;
   while (Wire.available() && (index < ByteCount))
   {
-      Data[index++] = Wire.read();
+    Data[index++] = Wire.read();
   }
 }
+
 // Writes ingle byte of data to I2C device using address and register
 void I2CWriteByte(uint8_t Address, uint8_t Register, uint8_t Data)
 {
@@ -111,4 +112,3 @@ void loop()
   Serial.println("");
   delay(2000);
 }
-
